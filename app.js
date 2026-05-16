@@ -32,7 +32,7 @@ app.post(
 
       await resend.emails.send({
 
-        from: 'Altruisty <offers@altruistyinnovation.com>',
+        from: 'Altruisty <altruisty@altruistyinnovation.com>',
 
         to: req.body.candidateEmail,
 
