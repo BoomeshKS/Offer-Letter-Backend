@@ -1,0 +1,215 @@
+/* ── App Shell ── */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ── Header ── */
+.app-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  flex-shrink: 0;
+  height: 60px;
+  z-index: 10;
+}
+
+.header-inner {
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--accent-muted);
+  border: 1px solid rgba(61,127,255,0.3);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.brand-name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.brand-sub {
+  display: block;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  margin-top: 2px;
+}
+
+/* ── Main Layout ── */
+.app-main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── Form Panel ── */
+.form-panel {
+  width: 340px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.panel-header {
+  padding: 20px 20px 0;
+  flex-shrink: 0;
+}
+
+.panel-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.panel-subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* ── Preview Panel ── */
+.preview-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #0a0d14;
+  overflow: hidden;
+}
+
+.preview-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.preview-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--success);
+  background: rgba(34,197,94,0.1);
+  border: 1px solid rgba(34,197,94,0.2);
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+}
+
+.preview-size-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.preview-scroller {
+  flex: 1;
+
+  overflow: auto;
+
+  display: flex;
+  justify-content: center;
+
+  padding: 32px 24px;
+
+  min-width: 0;
+  min-height: 0;
+
+  background: #050811;
+}
+
+/* Live dot animation */
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--success);
+  animation: pulse 1.6s ease-in-out infinite;
+  display: inline-block;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .45; transform: scale(1.4); }
+}
+
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .app-main {
+    flex-direction: column;
+  }
+
+  .form-panel {
+    width: 100%;
+    border-right: none;
+  }
+
+  /* Hide preview visually */
+  .mobile-hide-preview {
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    pointer-events: none;
+  }
+
+  .app-header {
+    padding: 0 14px;
+  }
+
+  .header-inner {
+    gap: 12px;
+  }
+
+  .brand-name {
+    font-size: 16px;
+  }
+
+  .brand-sub {
+    font-size: 10px;
+  }
+
+}

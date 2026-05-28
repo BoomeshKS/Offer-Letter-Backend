@@ -1,0 +1,137 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.offer-form {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px; /* Increased for better macro-spacing */
+}
+
+.form-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 24px 24px; /* Enhanced padding for an airy, luxurious feel */
+  display: flex;
+  flex-direction: column;
+  gap: 28px; /* Wider gaps prevent structural crowding */
+}
+
+/* ── Premium Field Groups ── */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.group-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em; /* Elite tracking */
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04); /* Ultra-faint separator */
+  opacity: 0.8;
+}
+
+/* ── Premium Field Item ── */
+.field-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Clean separation between label and field */
+}
+
+.field-label {
+  font-family: var(--font-body);
+  font-size: 13px; /* Slightly bumped for readability */
+  font-weight: 500;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: -0.01em;
+}
+
+.field-icon {
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0.7; /* Subdued icons look cleaner */
+}
+
+.field-input {
+  width: 100%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px; /* Slightly softer premium radius */
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 11px 16px; /* Generous padding for high-end look */
+  outline: none;
+  
+  /* Smooth Cubic-Bezier curve transitions instead of linear */
+  transition: 
+    border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+    background 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05); /* Subtle inner depth */
+}
+
+.field-input::placeholder {
+  color: var(--text-muted);
+  font-size: 13.5px;
+  opacity: 0.6;
+}
+
+.field-input:focus {
+  border-color: var(--accent);
+  background: var(--surface);
+  /* Volumetric, high-end focus glow */
+  box-shadow: 
+    0 0 0 1px var(--accent),
+    0 0 0 4px rgba(61, 127, 255, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.field-input:hover:not(:focus) {
+  border-color: rgba(255, 255, 255, 0.2); /* Adaptive dark/light border shift */
+  background: rgba(255, 255, 255, 0.02); /* Slight lighting change on hover */
+}
+
+/* ── Premium Form Footer ── */
+.form-footer {
+  margin-top: 12px;
+  padding: 0 24px;
+}
+
+.form-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.01); /* Minimalist canvas alignment */
+  border: 1px dashed var(--border); /* Dashed styling makes it look like an advisory container */
+  border-radius: 8px;
+  padding: 12px 16px;
+  line-height: 1.5;
+}
+
+
+@media (min-width: 600px) {
+  .field-group-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
